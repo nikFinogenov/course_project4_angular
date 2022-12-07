@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <app-info [infoType]="types.SECURED" [title]="'Secured'"></app-info>
+    </div>
+    <div class="col-4">
+      <app-info [infoType]="types.OPEN" [title]="'Unsecured'"></app-info>
+    </div>
+    <div class="col-4">
+      <button class="btn btn-primary w1-00" (click)="invalidRequest()">Send request with invalid JWT</button>
+    </div>
+  </div>
+</div>

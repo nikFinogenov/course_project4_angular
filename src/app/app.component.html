@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <span routerLink="/">Auth Client App</span>
+
+  <div class="menu d-flex mx-4">
+    <a class="text-white" routerLink="/secured-page">Secured page</a>
+  </div>
+
+  <div class="menu d-flex ms-auto">
+    <a class="text-white"
+       *ngIf="!(token$ | async)"
+       [routerLink]="['/auth', 'login']">
+      Sign In
+    </a>
+    <a class="text-white"
+       *ngIf="(token$ | async)"
+       (click)="singOutHandler()"
+    >
+      Sign Out
+    </a>
+  </div>
+
+</mat-toolbar>
+<div class="container my-5 py-5">
+  <router-outlet></router-outlet>
+</div>
